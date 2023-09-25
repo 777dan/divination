@@ -20,9 +20,9 @@ let poems = [
 ];
 
 let poets = {
-    "Evelyn Nightshade": "Mysteries of Evelyn Nightshade",
-    "Lucius Starweaver": "Lucius Starweaver's Prophecy",
-    "Seraphina Moonshadow": "Seraphina Moonshadow's Guidance"
+    "Evelyn Nightshade": poems[0],
+    "Lucius Starweaver": poems[1],
+    "Seraphina Moonshadow": poems[2]
 }
 
 let poem = "";
@@ -42,12 +42,8 @@ function poet3() {
 function divination() {
     while (true) {
         let question = prompt("Ask a fortune teller a question");
-        let index;
-        if (poem === "Mysteries of Evelyn Nightshade") index = 0;
-        if (poem === "Lucius Starweaver's Prophecy") index = 1;
-        if (poem === "Seraphina Moonshadow's Guidance") index = 2;
-        let randomPhrase = Math.floor(Math.random() * poems[index].length);
-        let answer = poems[index][randomPhrase];
+        let randomPhrase = Math.floor(Math.random() * poem.length);
+        let answer = poem[randomPhrase];
         alert(answer);
         let next = prompt("Any more divining?");
         if (next == "no") {
